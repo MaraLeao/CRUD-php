@@ -1,0 +1,132 @@
+.protagonistas{
+    text-align: center;
+}
+
+.gonDiv{
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+}
+
+.gonImage img{
+    -webkit-box-shadow: 18px 0px 33px -14px rgba(255,255,255,1);
+    -moz-box-shadow: 18px 0px 33px -14px rgba(255,255,255,1);
+    box-shadow: 18px 0px 33px -14px rgba(255,255,255,1);
+    margin: top 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+    background-color: rgb(0, 0, 0);
+    height: 100%;
+}
+
+.gontxt{
+    font-weight: 500;
+    margin: top 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    margin: 60px;
+    background-color: rgb(0, 0, 0);
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.killuaDiv{
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+
+.killuatxt{
+    font-weight: 500;
+    margin: top 5px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    justify-content: center;
+    color: rgb(35, 56, 158);
+}
+
+.killuaImage img{
+    -webkit-box-shadow: -18px 0px 33px -14px rgba(51,0,255,0.67);
+    -moz-box-shadow: -18px 0px 33px -14px rgba(51,0,255,0.67);
+    box-shadow: -18px 0px 33px -14px rgba(51,0,255,0.67);
+    margin-top: 5px;
+    width: 100%;
+    left: auto;
+    right: auto;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+}
+
+.leorioDiv{
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+}
+
+.leorioImage img{
+    -webkit-box-shadow: 18px 0px 33px -14px rgb(74, 169, 1);
+    -moz-box-shadow: 18px 0px 33px -14px rgb(74, 169, 1);
+    box-shadow: 18px 0px 33px -14px rgb(74, 169, 1);
+    margin: top 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+    background-color: rgb(0, 0, 0);
+    height: 100%;
+}
+
+.leoriotxt{
+    font-weight: 500;
+    margin: top 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    margin: 60px;
+    background-color: rgb(0, 0, 0);
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+
+.kurapikaDiv{
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+
+.kurapikatxt{
+    text-align: center;
+    font-weight: 500;
+    margin: top 5px;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    justify-content: center;
+    color: rgb(35, 56, 158);
+}
+
+.kurapikaImage img{
+    -webkit-box-shadow: -18px 0px 33px -14px rgba(254, 233, 0, 0.67);
+    -moz-box-shadow: -18px 0px 33px -14px rgba(254, 233, 0, 0.67);
+    box-shadow: -18px 0px 33px -14px rgba(254, 233, 0, 0.67);
+    margin-top: 5px;
+    margin-right: 0px;
+    width: 100%;
+    left: auto;
+    right: auto;
+    height: 100%;
+}
