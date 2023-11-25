@@ -1,1 +1,9 @@
-/*Use this page for code the css*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    background-color: rgb(16, 16, 16);
+    
+}

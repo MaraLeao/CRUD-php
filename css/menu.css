@@ -1,0 +1,47 @@
+
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+
+.logoHome{
+    color: red;
+    font-size: 30px;
+}
+
+header ul li{
+    display: inline-block;
+    list-style-type: none;
+    padding: 10px 20px;
+}
+
+header ul li a{
+    color: white;
+    text-decoration: 0;
+    font-weight: bold
+
+}
+
+header ul li a:hover{
+    color: red;
+    transition: 0.5s;
+}
+.user{
+    color: red;
+    padding-right: 20px;
+}
+
+.cadastro{
+    color: white;
+}
+
+.cadastro a:hover{
+    color: red;
+    transition: 0.5s;
+}
