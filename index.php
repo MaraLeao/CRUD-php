@@ -34,7 +34,7 @@
 
         <div class="menu">
             <a href="#" class="user"><i class="ri-user-3-line"></i>Logar</a>
-            <a href="#" class="cadastro">Cadastro</a>
+            <a href="src/pages/create.php" class="cadastro">Cadastro</a>
         </div>
     </header>
 
