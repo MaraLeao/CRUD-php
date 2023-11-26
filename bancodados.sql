@@ -1,5 +1,5 @@
-create database bancodado;
-use bancodado;
+create database bancodados;
+use bancodados;
 
 create table ex (
 	ex1 int,
