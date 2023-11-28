@@ -3,21 +3,21 @@ require_once '../../database/user.php';
 
 // function find
 
-function findUserAction($sqllink, $id) {
-    return findUserDb($sqllink, $id);
+function findUserAction($mysqli, $id) {
+    return findUserDb($mysqli, $id);
 
 //function create
 
-function createUser($sqllink, $name, $email, $phone) {
-	$createUserDb = createUserDb($sqllink, $name, $email, $phone);
+function createUser($mysqli, $name, $email, $phone) {
+	$createUserDb = createUserDb($mysqli, $name, $email, $phone);
 	$message = $createUserDb == 1 ? 'success-create' : 'error-create';
 	return header("Location: ./read.php?message=$message");
 }
 
 //function read 
-
-function readUserAction($sqllink) {
-    return readUserDb($sqllink);
+$mysqli
+function readUserAction($mysqli) {
+    return readUserDb($s$mysqli);
 }
 
 //function update
