@@ -1,6 +1,11 @@
 <?php //CRUD actions, require and response
 require_once '../database/user.php';
 
+// function find
+
+function findUserAction($sqllink, $id) {
+    return findUserDb($sqllink, $id);
+
 //function create
 
 function createUserAction($mysqli, $nome, $email, $numero) {
@@ -9,7 +14,11 @@ function createUserAction($mysqli, $nome, $email, $numero) {
 	return header("Location: ../pages/read.php?message=$message");
 }
 
-//function read
+//function read 
+
+function readUserAction($sqllink) {
+    return readUserDb($sqllink);
+}
 
 //function update
 
