@@ -1,12 +1,12 @@
 <?php //CRUD actions, require and response
-require_once '../../database/user.php';
+require_once '../database/user.php';
 
 //function create
 
-function createUser($sqllink, $name, $email, $phone) {
-	$createUserDb = createUserDb($sqllink, $name, $email, $phone);
+function createUserAction($mysqli, $nome, $email, $numero) {
+	$createUserDb = createUserDb($mysqli, $nome, $email, $numero);
 	$message = $createUserDb == 1 ? 'success-create' : 'error-create';
-	return header("Location: ./read.php?message=$message");
+	return header("Location: ../pages/read.php?message=$message");
 }
 
 //function read
