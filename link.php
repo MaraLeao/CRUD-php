@@ -11,9 +11,9 @@ $password = "";
  if($mysqli->connect_errno){
      echo "Falha ao conectar:(" . $mysqli->connect_errno . ")".$mysqli->connect_errno;
  }
- else
+ else{
     echo "Conectado ao Banco de Dados";
 
- }
  
+}
 ?>
