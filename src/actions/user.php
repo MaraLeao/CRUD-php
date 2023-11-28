@@ -5,6 +5,7 @@ require_once '../database/user.php';
 
 function findUserAction($sqllink, $id) {
     return findUserDb($sqllink, $id);
+}
 
 //function create
 
@@ -23,5 +24,11 @@ function readUserAction($sqllink) {
 //function update
 
 //function delete
+
+function deleteUserAction($mysqli, $id) {
+    $deleteUserDb = deleteUserDb($mysqli, $id);
+    $message = $deleteUserDb == 1 ? 'success-remove' : 'error-remove';
+    return header("Location: ./read.php?message=$message");
+}
 
 ?>
