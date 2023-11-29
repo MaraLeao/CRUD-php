@@ -2,7 +2,7 @@
 require_once '../../link.php';
 require_once '../actions/user.php';
 
-$users = readUserAction($sql);
+$informacoes = readUserAction($mysqli);
 
 if(isset($_POST['id']))
     deleteUserAction($mysqli, $_POST['id']);

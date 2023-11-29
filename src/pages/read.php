@@ -1,21 +1,9 @@
 <?php
-//server link
-$hostname = "localhost";
-$bancodedados = "bancodados";
-$user = "root";
-$password = "";
+    require_once '../../link.php';
+    require_once '../actions/user.php';
 
-// Criando a conexão com o banco de dados
-$mysqli = new mysqli($hostname, $user, $password, $bancodedados);
-
-// Verificando se há erros na conexão
-if($mysqli->connect_errno) {
-    echo "Falha ao conectar: (" . $mysqli->connect_errno . ") " . $mysqli->connect_errno;
-} else {
-    // Conexão bem-sucedida
-    echo "Conectado ao Banco de Dados";
-
-   
+    
+    $informacoes = readUserActions($mysqli);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -40,52 +28,20 @@ if($mysqli->connect_errno) {
                 <th scope="col">Ações</th>
             </tr>
         </thead>
-        <tbody>
-            <?php
-            // Busca usuários do banco de dados usando a conexão estabelecida
-            $users = lerAcao($mysqli);
-
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Telefone</th>
-                        <th scope="col">Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                // Busca usuários do banco de dados usando a conexão estabelecida
-                $users = readUserAction($mysqli);
-
-                // Exibe os usuários na tabela
-                if ($users && count($users) > 0) {
-                    foreach ($users as $index => $user) {
-                        ?>
-                <tr>
-                    <th scope="row"><?= ($index + 1) ?></th>
-                    <td><?= htmlspecialchars($user['name']) ?></td>
-                    <td><?= htmlspecialchars($user['email']) ?></td>
-                    <td><?= htmlspecialchars($user['phone']) ?></td>
-                    <td>
-                        <a href="./edit.php?id=<?= $user['id'] ?>">Editar</a>
-                        <a href="./delete.php?id=<?= $user['id'] ?>">Remover</a>
-                    </td>
-                </tr>
-                <?php
-                    }
-                } else {
-                    // Caso nenhum usuário seja encontrado
-                    ?>
-                <tr>
-                    <td colspan="5">Nenhum usuário encontrado.</td>
-                </tr>
-                <?php
-                }
-                ?>
-            </tbody>
+        <?php foreach($informacoes as $row): ?>
+        
+            <tr>
+                
+                <td><?= htmlspecialchars($row['nome']) ?></td>
+                <td><?= htmlspecialchars($row['email']) ?></td>
+                <td><?= htmlspecialchars($row['numero']) ?></td>
+                <td>
+                    <a href="./update.php?id=<?= $row['id'] ?>">Editar</a>
+                    <a href="./delete.php?id=<?= $row['id'] ?>">Remover</a>
+                </td>
+            </tr>
+        
+            <?php endforeach; ?>
         </table>
     </div>
 </body>
@@ -93,5 +49,5 @@ if($mysqli->connect_errno) {
 <?php
     // Feche a conexão após utilizar
     $mysqli->close();
-}
+
 ?>

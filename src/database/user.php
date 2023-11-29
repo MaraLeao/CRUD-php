@@ -2,11 +2,11 @@
 
 // find user db
 
-function AcharDB($mysqli, $id) {
+function findUserDb($mysqli, $id) {
     $id = mysqli_real_escape_string($mysqli, $id);
     $user;
 
-    $sql = "SELECT * FROM users  WHERE id = ?";
+    $sql = "SELECT * FROM informacoes  WHERE id = ?";
     $stmt = mysqli_stmt_init($mysqli);
 
     if(!mysqli_stmt_prepare($stmt, $sql))
@@ -54,7 +54,7 @@ function deleteUserDb($mysqli, $id) {
     $id = mysqli_real_escape_string($mysqli, $id);
 
     if($id) {
-        $sql = "DELETE FROM users WHERE id = ?";
+        $sql = "DELETE FROM informacoes WHERE id = ?";
         $stmt = mysqli_stmt_init($mysqli);
 
         if(!mysqli_stmt_prepare($stmt, $sql))
@@ -68,21 +68,36 @@ function deleteUserDb($mysqli, $id) {
 
 //read user db
 
-function lerAcao($mysqli) {
-    $users = [];
+function readUserDb($mysqli) {
+    $informacoes = [];
 
-    $sql = "SELECT * FROM users";
+    $sql = "SELECT * FROM informacoes";
     $result = mysqli_query($mysqli, $sql);
 
     $result_check = mysqli_num_rows($result);
 
     if($result_check > 0)
-        $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $informacoes = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
     mysqli_close($mysqli);
-    return $users;
+    return $informacoes;
 }
 
 //update user db
+
+function updateUserDb($mysqli, $id, $nome, $email, $numero) {
+    if($id && $nome && $email && $numero) {
+		$sql = "UPDATE informacoes SET nome = ?, email = ?, phone = ? WHERE id = ?";
+		$stmt = mysqli_stmt_init($mysqli);
+
+		if(!mysqli_stmt_prepare($stmt, $sql))
+			exit('SQL error');
+
+		mysqli_stmt_bind_param($stmt, 'sssi', $nome, $email, $numero, $id);
+		mysqli_stmt_execute($stmt);
+		mysqli_close($mysqli);
+		return true;
+	}
+}
 
 ?>
