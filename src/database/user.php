@@ -2,12 +2,12 @@
 
 // find user db
 
-function findUserDb($sqllink, $id) {
-    $id = mysqli_real_escape_string($sqllink, $id);
+function AcharDB($mysqli, $id) {
+    $id = mysqli_real_escape_string($mysqli, $id);
     $user;
 
     $sql = "SELECT * FROM users  WHERE id = ?";
-    $stmt = mysqli_stmt_init($sqllink);
+    $stmt = mysqli_stmt_init($mysqli);
 
     if(!mysqli_stmt_prepare($stmt, $sql))
         exit('SQL error');
@@ -17,7 +17,7 @@ function findUserDb($sqllink, $id) {
 
     $user = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
 
-    mysqli_close($sqllink);
+    mysqli_close($mysqli);
     return $user;
 }
 
@@ -68,18 +68,18 @@ function deleteUserDb($mysqli, $id) {
 
 //read user db
 
-function readUserDb($sqllink) {
+function lerAcao($mysqli) {
     $users = [];
 
     $sql = "SELECT * FROM users";
-    $result = mysqli_query($sqllink, $sql);
+    $result = mysqli_query($mysqli, $sql);
 
     $result_check = mysqli_num_rows($result);
 
     if($result_check > 0)
         $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-    mysqli_close($sqllink);
+    mysqli_close($mysqli);
     return $users;
 }
 

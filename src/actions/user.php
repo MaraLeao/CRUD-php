@@ -7,18 +7,19 @@ function findUserAction($sqllink, $id) {
     return findUserDb($sqllink, $id);
 }
 
+
 //function create
 
-function createUserAction($mysqli, $nome, $email, $numero) {
-	$createUserDb = createUserDb($mysqli, $nome, $email, $numero);
+function createUser($mysqli, $name, $email, $phone) {
+	$createUserDb = createUserDb($mysqli, $name, $email, $phone);
 	$message = $createUserDb == 1 ? 'success-create' : 'error-create';
 	return header("Location: ../pages/read.php?message=$message");
 }
 
 //function read 
 
-function readUserAction($sqllink) {
-    return readUserDb($sqllink);
+function lerAcao($mysqli) {
+    return LerDB($mysqli);
 }
 
 //function update
