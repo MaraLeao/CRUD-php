@@ -10,28 +10,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/cadastro.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar</title>
 </head>
 <body>
-    <h1>Tela de cadastro</h1>
+<div class="cadastro">
 
-    <form action="../pages/create.php" method="POST">
+<h1>Tela de cadastro</h1>
 
-        <label for="nome">Digite seu nome:</label>
-        <input type="text" name="nome" required/><br>
+    <div class="registers">
 
-        <label for="email">Digite seu e-mail:</label>
-        <input type="email" name="email" required/><br>
-        
-        <label for="celular">Digite seu numero de celular:</label>
-        <input type="tel" name="numero" required><br>
-        
-        <button type="submit">Cadastrar</button>
-    </form>
-    <?php
+        <form action="../pages/create.php" method="POST">
+            
+            <label for="nome">Digite seu nome:</label> <p></p>
+            <input class="inputs" placeholder="Digite seu Nome" type="text" name="nome" required/><br>
+            
+            <label for="email">Digite seu e-mail:</label> <p></p>
+            <input class="inputs" placeholder="Digite seu Email" type="email" name="email" required/><br>
+            
+            <label for="celular">Digite seu numero de celular:</label> <p></p>
+            <input class="inputs" placeholder="Digite seu Número" type="tel" name="numero" required><br> <p></p>
+            
+        </div>
+            <button class="button" type="submit">Cadastrar</button>
+            
+        </form>
 
-    ?>
+<?php
+
+?>
+</div>
 </body>
 </html>
