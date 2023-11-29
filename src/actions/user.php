@@ -15,7 +15,7 @@ function createUser($mysqli, $name, $email, $phone) {
 }
 
 //function read 
-$mysqli
+
 function lerAcao($mysqli) {
     return LerDB($mysqli);
 }
