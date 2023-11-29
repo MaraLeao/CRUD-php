@@ -4,7 +4,7 @@
 
 function AcharDB($mysqli, $id) {
     $id = mysqli_real_escape_string($mysqli, $id);
-    $user;
+    $informacoes;
 
     $sql = "SELECT * FROM users  WHERE id = ?";
     $stmt = mysqli_stmt_init($mysqli);
@@ -15,10 +15,10 @@ function AcharDB($mysqli, $id) {
     mysqli_stmt_bind_param($stmt, 'i', $id);
     mysqli_stmt_execute($stmt);
 
-    $user = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
+    $informacoes = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
 
     mysqli_close($mysqli);
-    return $user;
+    return $informacoes;
 
 
 
@@ -53,7 +53,7 @@ function createUserDb($mysqli, $nome, $email, $numero) {
 //read user db
 
 function lerAcao($mysqli) {
-    $users = [];
+    $informacoes = [];
 
     $sql = "SELECT * FROM users";
     $result = mysqli_query($mysqli, $sql);
@@ -61,10 +61,10 @@ function lerAcao($mysqli) {
     $result_check = mysqli_num_rows($result);
 
     if($result_check > 0)
-        $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $informacoes = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
     mysqli_close($mysqli);
-    return $users;
+    return $informacoes;
 }
 
 //update user db

@@ -2,11 +2,11 @@
 //server link
 $hostname = "localhost";
 $bancodedados = "bancodados";
-$user = "root";
+$informacoes = "root";
 $password = "";
 
 // Criando a conexão com o banco de dados
-$mysqli = new mysqli($hostname, $user, $password, $bancodedados);
+$mysqli = new mysqli($hostname, $informacoes, $password, $bancodedados);
 
 // Verificando se há erros na conexão
 if($mysqli->connect_errno) {
@@ -38,20 +38,20 @@ if($mysqli->connect_errno) {
         <tbody>
             <?php
             // Busca usuários do banco de dados usando a conexão estabelecida
-            $users = lerAcao($mysqli);
+            $informacoes = lerAcao($mysqli);
 
             // Exibe os usuários na tabela
-            if ($users && count($users) > 0) {
-                foreach ($users as $index => $user) {
+            if ($informacoes && count($informacoes) > 0) {
+                foreach ($informacoes as $index => $informacoes) {
             ?>
             <tr>
                 <th scope="row"><?= ($index + 1) ?></th>
-                <td><?= htmlspecialchars($user['name']) ?></td>
-                <td><?= htmlspecialchars($user['email']) ?></td>
-                <td><?= htmlspecialchars($user['phone']) ?></td>
+                <td><?= htmlspecialchars($informacoes['name']) ?></td>
+                <td><?= htmlspecialchars($informacoes['email']) ?></td>
+                <td><?= htmlspecialchars($informacoes['phone']) ?></td>
                 <td>
-                    <a href="./edit.php?id=<?= $user['id'] ?>">Editar</a>
-                    <a href="./delete.php?id=<?= $user['id'] ?>">Remover</a>
+                    <a href="./edit.php?id=<?= $informacoes['id'] ?>">Editar</a>
+                    <a href="./delete.php?id=<?= $informacoes['id'] ?>">Remover</a>
                 </td>
             </tr>
             <?php
