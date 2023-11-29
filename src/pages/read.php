@@ -18,6 +18,8 @@
 <body>
     <div class="fundo">
 
+    <button type="button"><a href="./create.php">add</a></button>
+
     <table class="table">
         <thead>
             <tr>
