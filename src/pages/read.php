@@ -33,7 +33,7 @@
         <?php foreach($informacoes as $row): ?>
         
             <tr>
-                
+                <td><?= htmlspecialchars($row['id']) ?></td>
                 <td><?= htmlspecialchars($row['nome']) ?></td>
                 <td><?= htmlspecialchars($row['email']) ?></td>
                 <td><?= htmlspecialchars($row['numero']) ?></td>
