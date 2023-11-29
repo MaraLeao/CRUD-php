@@ -15,7 +15,7 @@ if($mysqli->connect_errno) {
     // Conexão bem-sucedida
     echo "Conectado ao Banco de Dados";
 
-    // Inclua o código para exibir a tabela de usuários aqui
+   
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +38,7 @@ if($mysqli->connect_errno) {
         <tbody>
             <?php
             // Busca usuários do banco de dados usando a conexão estabelecida
-            $users = readUserAction($mysqli);
+            $users = lerAcao($mysqli);
 
             // Exibe os usuários na tabela
             if ($users && count($users) > 0) {

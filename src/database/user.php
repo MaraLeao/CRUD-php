@@ -2,7 +2,7 @@
 
 // find user db
 
-function findUserDb($mysqli, $id) {
+function AcharDB($mysqli, $id) {
     $id = mysqli_real_escape_string($mysqli, $id);
     $user;
 
@@ -52,7 +52,7 @@ function createUserDb($mysqli, $nome, $email, $numero) {
 
 //read user db
 
-function readUserDb($mysqli) {
+function lerAcao($mysqli) {
     $users = [];
 
     $sql = "SELECT * FROM users";

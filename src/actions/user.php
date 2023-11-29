@@ -3,8 +3,8 @@ require_once '../database/user.php';
 
 // function find
 
-function findUserAction($mysqli, $id) {
-    return findUserDb($mysqli, $id);
+function acharAcao($mysqli, $id) {
+    return AcharDB($mysqli, $id);
 
 //function create
 
@@ -16,8 +16,8 @@ function createUser($mysqli, $name, $email, $phone) {
 
 //function read 
 $mysqli
-function readUserAction($mysqli) {
-    return readUserDb($s$mysqli);
+function lerAcao($mysqli) {
+    return LerDB($mysqli);
 }
 
 //function update
