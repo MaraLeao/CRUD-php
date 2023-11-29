@@ -3,8 +3,10 @@ require_once '../database/user.php';
 
 // function find
 
-function acharAcao($mysqli, $id) {
-    return AcharDB($mysqli, $id);
+function findUserAction($sqllink, $id) {
+    return findUserDb($sqllink, $id);
+}
+
 
 //function create
 
@@ -23,5 +25,11 @@ function lerAcao($mysqli) {
 //function update
 
 //function delete
+
+function deleteUserAction($mysqli, $id) {
+    $deleteUserDb = deleteUserDb($mysqli, $id);
+    $message = $deleteUserDb == 1 ? 'success-remove' : 'error-remove';
+    return header("Location: ./read.php?message=$message");
+}
 
 ?>

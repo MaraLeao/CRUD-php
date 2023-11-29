@@ -19,6 +19,7 @@ function AcharDB($mysqli, $id) {
 
     mysqli_close($mysqli);
     return $informacoes;
+}
 
 
 
@@ -49,6 +50,21 @@ function createUserDb($mysqli, $nome, $email, $numero) {
 
 //delete user db
 
+function deleteUserDb($mysqli, $id) {
+    $id = mysqli_real_escape_string($mysqli, $id);
+
+    if($id) {
+        $sql = "DELETE FROM users WHERE id = ?";
+        $stmt = mysqli_stmt_init($mysqli);
+
+        if(!mysqli_stmt_prepare($stmt, $sql))
+            exit('SQL error');
+
+        mysqli_stmt_bind_param($stmt, 'i', $id);
+        mysqli_stmt_execute($stmt);
+        return true;
+    }
+}
 
 //read user db
 
