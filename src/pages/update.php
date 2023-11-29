@@ -2,10 +2,12 @@
     require_once '../../link.php';
     require_once '../actions/user.php';
 
-    if (isset($_POST["id"], $_POST["nome"]) && isset($_POST["email"]) && isset($_POST["numero"]))
-    updateUserAction($mysqli, $_POST["id"], $_POST["nome"], $_POST["email"], $_POST["numero"]);
+    $user_id = $_GET['id'];
 
-    $user = findUserAction($mysqli, $_GET['id']);
+    if (isset($_POST["id"]) && isset($_POST["nome"]) && isset($_POST["email"]) && isset($_POST["numero"])) 
+        updateUserAction($mysqli, $_POST["id"], $_POST["nome"], $_POST["email"], $_POST["numero"]);
+
+    $user = findUserAction($mysqli, $user_id);
 
 ?>
 
@@ -24,14 +26,14 @@
         </div>
         
             <div>
-                <form class="form" action="../pages/update.php" method="POST">
-                    <input type="hidden" name="id" value="<?=$informacoes['id']?>" required/>
+                <form class="form" action="../pages/update.php?id=<?=$user_id?>" method="POST">
+                    <input type="hidden" name="id" value="<?=$user['id']?>" required/>
                     <label>Nome</label>
-                    <input type="text" name="name" value="<?=htmlspecialchars($user['nome'])?>" required/>
+                    <input type="text" name="nome" value="<?=htmlspecialchars($user['nome'])?>" required/>
                     <label>E-mail</label>
                     <input type="email" name="email" value="<?=htmlspecialchars($user['email'])?>" required/>
                     <label>Número</label>
-                    <input type="text" name="phone" value="<?=htmlspecialchars($user['numero'])?>" required/>
+                    <input type="text" name="numero" value="<?=htmlspecialchars($user['numero'])?>" required/>
 
                     <button type="submit">Save</button>
                 </form>
