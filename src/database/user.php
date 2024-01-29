@@ -1,7 +1,6 @@
 <?php 
 
 // find user db
-
 function findUserDb($mysqli, $id) {
     $internal_id = mysqli_real_escape_string($mysqli, $id);
 
@@ -20,17 +19,11 @@ function findUserDb($mysqli, $id) {
     return $user;
 }
 
-
-
-
 //create user db
-
-
 function createUserDb($mysqli, $nome, $email, $numero) {
 	$name = mysqli_real_escape_string($mysqli, $nome);
 	$email = mysqli_real_escape_string($mysqli, $email);
 	$phone = mysqli_real_escape_string($mysqli, $numero);
-
 
 	if($nome && $email && $numero) {
 		$sql = "INSERT INTO informacoes (nome, email, numero) VALUES (?, ?, ?)";
@@ -46,9 +39,7 @@ function createUserDb($mysqli, $nome, $email, $numero) {
 	}
 }
 
-
 //delete user db
-
 function deleteUserDb($mysqli, $id) {
     $id = mysqli_real_escape_string($mysqli, $id);
 
@@ -67,7 +58,6 @@ function deleteUserDb($mysqli, $id) {
 }
 
 //read user db
-
 function readUserDb($mysqli) {
     $informacoes = [];
 
@@ -84,7 +74,6 @@ function readUserDb($mysqli) {
 }
 
 //update user db
-
 function updateUserDb($mysqli, $id, $nome, $email, $numero) {
     if($id && $nome && $email && $numero) {
 		$sql = "UPDATE informacoes SET nome = ?, email = ?, numero = ? WHERE id = ?";

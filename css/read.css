@@ -24,11 +24,16 @@ button {
     border-radius: 5px;
     background-color: rgb(189, 189, 189); 
     padding: 1%;
+    color:black;
+}
+
+.button { 
+    color:black;
 }
 
 a {
-    color:white;
     text-decoration: none;
+    color:black;
 }
 
 .icons_actions:hover {

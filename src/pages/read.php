@@ -19,7 +19,7 @@
     <body>
         <div class="fundo">
 
-            <h1>Lista UsuÃ¡rios</h1>
+            <h1>Lista Usuários</h1>
 
             <button class="button" type="button"><a href="../pages/create.php">adicionar</a></button>
 
@@ -27,9 +27,9 @@
                 <table>
                 
                     <tr>
-                        <th >#</th>
-                        <th >Nome</th>
-                        <th >Email</th>
+                        <th>#</th>
+                        <th>Nome</th>
+                        <th>Email</th>
                         <th>Telefone</th>
                         <th>Ações</th>
                     </tr>
